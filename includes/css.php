@@ -82,7 +82,7 @@
 
 <!-- Facebook Pixel Code -->
 
-<script>
+<!-- <script>
 
 !function(f,b,e,v,n,t,s)
 
@@ -114,7 +114,7 @@ src="https://www.facebook.com/tr?id=414151753248980&ev=PageView
 
 &noscript=1"/>
 
-</noscript>
+</noscript> -->
 
 <!-- End Facebook Pixel Code -->
 
