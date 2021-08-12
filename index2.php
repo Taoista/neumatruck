@@ -51,7 +51,6 @@
 <html lang="es">
 <head>
 	<?php include_once("includes/head.inc.php"); ?>
-
 </head>
 <body>
 	
@@ -92,69 +91,13 @@
 
 	<!-- <a href="ofertas.php"><img class="nature" src="img/2.0/banner/ciber.webp" width="100%"></a> -->
 
-
-<!-- 
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-        <img class="d-block w-100" src="img/2.0/banner/1-banner.webp" alt="First slide">
-        </div>
-        <div class="carousel-item">
-        <img class="d-block w-100" src="img/2.0/banner/2-banner.webp" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-        <img class="d-block w-100" src="img/2.0/banner/3-banner.webp" alt="Third slide">
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a> -->
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="img/2.0/banner/1-banner.webp" alt="Los Angeles">
-    </div>
-
-    <div class="item">
-      <img src="img/2.0/banner/2-banner.webp" alt="Chicago">
-    </div>
-
-    <div class="item">
-      <img src="img/2.0/banner/3-banner.webp" alt="New York">
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-
-
+	<?php for ($i=0; $i < count($getBanners) ; $i++) { ?>
+		<?php if ($getBanners[$i]['url'] != 'no') { ?>
+			<a href="ofertas.php"><img class="nature" src="<?php echo 'img/2.0/banner/'.$getBanners[$i]['img'].'.webp'; ?>" width="100%"></a>
+		<?php }else{ ?>
+			<img class="nature" src="<?php echo 'img/2.0/banner/'.$getBanners[$i]['img'].'.webp'; ?>" width="100%">
+		<?php } ?>
+	<?php } ?>
 
 	<script>
 		w3.slideshow(".nature", 4000);
@@ -317,15 +260,6 @@
 		<!-- /SECTION -->
 		<?php include('includes/footer.php'); ?>
 		<script>
-            $(document).ready(function() {
-   $("#myCarousel").swiperight(function() {
-      $(this).carousel('prev');
-    });
-   $("#myCarousel").swipeleft(function() {
-      $(this).carousel('next');
-   });
-});
-
 		$(document).ready(function(){
 			$('.customer-logos').slick({
 				slidesToShow: 8,
