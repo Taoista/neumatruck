@@ -7,7 +7,7 @@
 function show_card($of, $marcas,$img, $apli, $stk, $ids, $std, $nombre, $cod, $voferta, $vpublicado, $vlista){
     $link = mysql_connect("localhost", "neum45356_neumatruck", "7340458Tao");
     mysql_select_db("neum45356_neumatruck",$link) OR DIE ("Error: No es posible establecer la conexión");
-    mysql_set_charset('utf8');
+    mysql_set_charset('utf8'); 
 
     $title_1 = '';
     $title_2 = '';
@@ -125,7 +125,10 @@ function show_card($of, $marcas,$img, $apli, $stk, $ids, $std, $nombre, $cod, $v
 }
 
 function card_index($of, $marcas,$img, $apli, $stk, $ids, $std, $nombre, $cod, $voferta, $vpublicado, $vlista){
-  include('comx.php');
+  $link = mysql_connect("localhost", "neum45356_neumatruck", "7340458Tao");
+  mysql_select_db("neum45356_neumatruck",$link) OR DIE ("Error: No es posible establecer la conexión");
+  mysql_set_charset('utf8'); 
+  
   $title_1 = '';
   $title_2 = '';
   $title_3 = '';
@@ -142,7 +145,6 @@ function card_index($of, $marcas,$img, $apli, $stk, $ids, $std, $nombre, $cod, $
     while($f = mysql_fetch_array($re)){
       $st_of2 = $f['resultado'];
   }
-
 
   $re = mysql_query("SELECT title FROM configuracion_title WHERE id = 1 LIMIT 1") or die(mysql_error());
   while($f = mysql_fetch_array($re)){

@@ -22,7 +22,7 @@
 
 
 
-    mysql_close();
+    // mysql_close();
 
 
 
@@ -51,7 +51,7 @@
                         <button class="newsletter-btn" type="submit"><i class="fa fa-envelope"></i> Suscribete</button>
 
                     </form>
-
+ 
                     <ul class="newsletter-follow">
 
                         <li><a target="_blank" href="https://www.facebook.com/neumatruck.cl/"><i class="fa fa-facebook"></i></a></li>
@@ -128,13 +128,20 @@
 
                             <?php
 
-                            $categoriasfooter = $mysqli->query('SELECT nombre,id FROM categorias ORDER BY nombre ');
+                            // $categoriasfooter = $mysqli->query('SELECT nombre,id FROM categorias ORDER BY nombre ');
 
-                            while($categoriasfooterr = $categoriasfooter->fetch_assoc()){
+                            // while($categoriasfooterr = $categoriasfooter->fetch_assoc()){
+
+                                $re = mysql_query("SELECT nombre,id FROM categorias ORDER BY nombre ") or die(mysql_error());
+
+                                while($f = mysql_fetch_array($re)){
+                        
+                        
+                        
 
                                 ?>
 
-                                    <li><a href="categoria.php?tipo-item=<?php echo $categoriasfooterr["nombre"];?>"><?php echo $categoriasfooterr['nombre'];?></a></li>
+                                    <li><a href="categoria.php?tipo-item=<?php echo $f["nombre"];?>"><?php echo $f['nombre'];?></a></li>
 
                                 <?php
 
