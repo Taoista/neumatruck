@@ -48,7 +48,7 @@
 
                         <input class="input" type="email" name="email_newsletter" placeholder="Dirección de Email" required>
 
-                        <button class="newsletter-btn" type="submit"><i class="fa fa-envelope"></i> Suscribete</button>
+                        <button class="newsletter-btn" type="submit"><i class="fa fa-envelope"></i> Suscribete</button> 
 
                     </form>
  

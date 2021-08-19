@@ -30,7 +30,5 @@ $mysqli->close();
 	<a target="_blank" style="background-color:#4FCE5D;" href="https://api.whatsapp.com/send?phone=<?php echo $whatsapp; ?>&amp;text=Estoy%20interesado%20en%20sus%20productos"class="twitter"><i class="fa fa-whatsapp"></i></a>
 	<!-- <a href="mailto:contacto@neumatruck.cl" class="linkedin"><i class="fa fa-envelope-o"></i></a> -->
 </div>
-<noscript>
-	<img height="1" width="1" src="https://www.facebook.com/tr?id=543022966316431&ev=PageView&noscript=1"/>
-</noscript> 
+
 
