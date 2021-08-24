@@ -249,7 +249,7 @@ if($total >0) {
 
 
 							<?php
-
+								require('funciones/conexion.php');
                             	$carro	= $mysqli->query("SELECT * FROM tmp_carro_truck WHERE tmp_idunica='".$_SESSION["idunica"]."' ");
 
 								$total	= $carro->num_rows;

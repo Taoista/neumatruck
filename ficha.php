@@ -297,7 +297,7 @@ if(isset($idProdudcots) && $idProdudcots !=''){
 										<div class="add-to-cart">
 
                       <button class="add-to-cart-btn agregacarro" rel="<?php echo $datosRow['id']; ?>"><i class="fa fa-shopping-cart"></i>Agregar Al Carro</button>
-
+ 
 										</div>
 
 									<?php
@@ -508,7 +508,7 @@ if(isset($idProdudcots) && $idProdudcots !=''){
 
 				<?php
 
-
+require('funciones/conexion.php');
 
 				$consultacamiones	= $mysqli->query("SELECT p.id, p.codigo ,p.estado, p.nombre, p.categoria,p.stock , m.marca, p.medidas, a.aplicacion, p.media, p.oferta, p.val_oferta, p.v_lista, p.v_publicado
 
