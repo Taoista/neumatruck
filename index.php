@@ -52,7 +52,7 @@
 <head>
 	<?php include_once("includes/head.inc.php"); ?>
 </head>
-<body>
+<body> 
 	
 <?php include 'includes/body.inc.php'; ?>
 
