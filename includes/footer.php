@@ -392,7 +392,8 @@ function agregar_product(rel,stock,estado){
 
 
     $('.agregacarro').click(function(){
-
+        fbq('track', 'AddToCart');
+        console.log("creando evente de facebook");
         // var  pixel_val      = $(".product-price").val();
 
         var codigo_ivana = "codigo_demo_ivana";

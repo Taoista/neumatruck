@@ -77,13 +77,16 @@
 	gtag('config', 'UA-159179503-1');
 
 </script>
-
-
+<!-- FACEBOOK VERIFICADOR DOMINIO PIXEL -->
+<meta name="facebook-domain-verification" content="hmhiq76ah4inz05pdl0jgt08inex1h" />
 
 <!-- Facebook Pixel Code -->
 
 
+<?php
+// EAADfB0W6T24BAPu2LtVYYv4Nlw5XbkpQnK0ZA80CH9qSZAv669jrRoxos3lPOm1BZBw8VZAqZCfNsZBHZBAvDwiTHboLZCedIoZA2NLO7639MNjV2eduZC4SnOIOldaLiMINloeZCo5qiZB0kQz5bBcFjUvwBazO5c3TbJVyPHgdgYKpnM1vE8cVSeXVt5GaUHtKJMsZD
 
+?>
 <!-- End Facebook Pixel Code -->
 
 
