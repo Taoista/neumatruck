@@ -44,11 +44,12 @@
 
                     <p>Si deseas ser parte de nuestro circulo y recibir nuestro <strong>NEWSLETTER</strong></p>
 
-                    <form action="<?php echo _GetDomain; ?>procesa-newsletter.php" method="POST" enctype="application/x-www-form-urlencoded">
+                    <!-- <form action="<?php //echo _GetDomain; ?>procesa-newsletter.php" method="POST" enctype="application/x-www-form-urlencoded">  -->
+                    <form  method="POST" enctype="application/x-www-form-urlencoded"> 
 
-                        <input class="input" type="email" name="email_newsletter" placeholder="Dirección de Email" required>
+                        <input id="email-newslatter" class="input" type="email" name="email_newsletter" placeholder="Dirección de Email" required>
 
-                        <button class="newsletter-btn" type="submit"><i class="fa fa-envelope"></i> Suscribete</button> 
+                        <button onclick="send_newslatter(event)" class="newsletter-btn" type="submit"><i class="fa fa-envelope"></i> Suscribete</button> 
 
                     </form>
  
@@ -518,7 +519,49 @@ function agregar_product(rel,stock,estado){
 
 <script>
 
+function send_newslatter(e){
+    e.preventDefault();
+    let email = document.getElementById("email-newslatter").value;
+    let correccion = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
+    if (correccion.exec(email)){
+        let parametros = {"email" : email};
+        const send_newslatter = new Promise((resolve, rejected) =>{
+            $.ajax({
+                data: parametros,
+                type: "POST",
+                url:  "./funciones/send_newslatter.php", 
+                beforeSend:function(){
+                    Swal.fire({
+                        html:'<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
+                        title: 'Enviando..',
+                        showCloseButton: false,
+                        showCancelButton: false,
+                        focusConfirm: false,
+                        showConfirmButton:false,
+                    })
+                    $(".swal2-modal").css('background-color', 'rgba(0, 0, 0, 0.0)'); 
+                    $(".swal2-title").css("color","white"); 
+                },
+                success:function(response){
+                    resolve(response);
+                }
+            });
+        });
 
+
+        send_newslatter.then(res=>{
+            
+            swal.close();
+            if(res == 'ingresado'){
+                Swal.fire('Newsletter','Su Email fue agregado correctamente','success');
+            }else{
+                Swal.fire('Newsletter','Su Email ya esta en nuestros registros','success');
+            }
+        });
+    }else{
+        Swal.fire('error','El email es invalido','error');
+    }
+}
 
 </script>
 

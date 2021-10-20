@@ -1,0 +1,4 @@
+[20-Oct-2021 13:26:05 America/Santiago] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_include=0 in /home/neum45356/public_html/funciones/send_newslatter.php on line 6
+[20-Oct-2021 13:26:05 America/Santiago] PHP Warning:  include(http://neumatruck.cl/includes/conx_pdo.php): failed to open stream: no suitable wrapper could be found in /home/neum45356/public_html/funciones/send_newslatter.php on line 6
+[20-Oct-2021 13:26:05 America/Santiago] PHP Warning:  include(): Failed opening 'http://neumatruck.cl/includes/conx_pdo.php' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/neum45356/public_html/funciones/send_newslatter.php on line 6
+[20-Oct-2021 13:26:05 America/Santiago] PHP Fatal error:  Call to a member function query() on null in /home/neum45356/public_html/funciones/send_newslatter.php on line 12
