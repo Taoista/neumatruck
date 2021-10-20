@@ -83,10 +83,7 @@
 <!-- Facebook Pixel Code -->
 
 
-<?php
-// EAADfB0W6T24BAPu2LtVYYv4Nlw5XbkpQnK0ZA80CH9qSZAv669jrRoxos3lPOm1BZBw8VZAqZCfNsZBHZBAvDwiTHboLZCedIoZA2NLO7639MNjV2eduZC4SnOIOldaLiMINloeZCo5qiZB0kQz5bBcFjUvwBazO5c3TbJVyPHgdgYKpnM1vE8cVSeXVt5GaUHtKJMsZD
 
-?>
 <!-- End Facebook Pixel Code -->
 
 

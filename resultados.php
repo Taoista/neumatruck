@@ -33,7 +33,7 @@
 	$busqueda = "%".$filtro_busqueda."%";
 
 
- 
+
 	$marcas = busqueda_nav_marcas($busqueda);
 
 	$medidas = busqueda_nav_medida($busqueda);

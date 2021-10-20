@@ -1,12 +1,12 @@
 <?php
 // AUDITADO
-session_start(); 
+session_start();
 
 include 'funciones/conexion.php';
 
 include 'funciones/funciones.php';
 
-include 'funciones/funciones_aux.php'; 
+include 'funciones/funciones_aux.php';
 
 include('includes/card.php');
 
@@ -34,7 +34,7 @@ include('includes/card.php');
 
 	$busqueda = $palabra;
 
-	$productos = busquda_producto_categoria($palabra); 
+	$productos = busquda_producto_categoria($palabra);
 
 	$medidas = busqueda_nav_medidas_categoria($palabra);
 
