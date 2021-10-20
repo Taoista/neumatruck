@@ -174,7 +174,7 @@ $pagina 			= title_web($url);
 		let text = document.getElementById("text-contac").value;
 		let phone = document.getElementById("phone").value;
 		let correccion = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/
-		if(name == "" || email == "" || asunto == ""){
+		if(name == "" || email == "" || asunto == "" || phone == "" || ){
 			Swal.fire('Error','Debe llenar todos lo campos','error');
 		}else if(!correccion.exec(email)){
 			Swal.fire('error','El email es invalido','error');
