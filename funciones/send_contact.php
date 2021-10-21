@@ -35,7 +35,7 @@ $contador_correo    = intval($row[0]);
 
 
 
-$email_select = $correos[$contador_correo];
+$email_select = $correos[$contador_correo]["email"];
 
 $id_saving =        $contador_correo;
 
@@ -76,9 +76,12 @@ $desde                 = 'MIME-Version: 1.0' . "\r\n";
 $desde                 .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
 $desde                 .= "From:"."	neumatruck.cl <no-reply@neumatruck.cl>";
 
-mail("aolave@neumachile.cl",$cliente_asunto,$correo_php,$desde);
+// mail("aolave@neumachile.cl",$cliente_asunto,$correo_php,$desde);
+mail("contacto@neumatruck.cl",$cliente_asunto,$correo_php,$desde);
 // mail("avillegas@neumachile.cl",$cliente_asunto,$correo_php,$desde);
 mail($email_select,$cliente_asunto,$correo_php,$desde);
+mail("aolave@neumachile.cl",$cliente_asunto,$correo_php,$desde);
+
 
 
 echo "enviado";
