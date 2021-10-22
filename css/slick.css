@@ -258,7 +258,7 @@
 
   }
 
-  
+
 
   @-webkit-keyframes glow {
 
@@ -266,18 +266,16 @@
 
       color: #fff;
 
-      text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7, 0 0 40px #00fff7, 0 0 50px #00fff7, 0 0 60px #00fff7, 0 0 70px #00fff7, 0 0 90px #00fff7;
+      text-shadow: 0 0 10px #572364, 0 0 20px #572364, 0 0 30px #572364, 0 0 40px #572364, 0 0 50px #572364, 0 0 60px #572364, 0 0 70px #572364, 0 0 90px #572364;
 
     }
 
     to {
 
-      color: #00fff7;
+      color: white;
 
       text-shadow: 0 0 20px #00fff7, 0 0 30px #00fff7, 0 0 40px #00fff7, 0 0 50px #00fff7, 0 0 60px #00fff7, 0 0 70px #00fff7, 0 0 80px #00fff7, 0 1 90px #00fff7;
 
     }
 
   }
-
-  
