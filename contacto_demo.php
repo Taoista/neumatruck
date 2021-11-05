@@ -18,6 +18,7 @@ $pagina 			= title_web($url);
 			<?php include_once("includes/head.inc.php"); ?>
 
 			<link rel="stylesheet" type="text/css" href="<?echo _GetDomain; ?>css/main.css">
+
 		</head>
 <body>
 <?php include 'includes/body.inc.php'; ?>
@@ -83,9 +84,9 @@ $pagina 			= title_web($url);
                     <div>
 				
 						<form id="form-img" action="./funciones/upload-photo.php" method="post" enctype="multipart/form-data">
-							<label for="">Ingresar Imagen</label>
-							 <input onchange="update_file()" id="img-photo" type="file" name="image" accept="image/*;capture=camera" data-buttonText="Your label here."><br>
-							<!-- <button id="btn-envio" type="submit" class="btn btn-primary">Subir Imagen</button> -->
+							<label for="">Adjuntar Imagen</label>
+							 <input id="img-photo" type="file" name="image" accept="image/*;capture=camera"><br>
+							<button id="btn-envio" type="submit" class="btn btn-primary">Subir Imagen</button>
 							<button id="btn-delete" onclick="delete_photo()" type="button" class="btn btn-danger" style="display:none">Eliminar</button>
 						</form>
                     </div>
@@ -117,7 +118,6 @@ $pagina 			= title_web($url);
 	<script src="./js/camara.js"></script>
 </body>
 <script>
-
 	function send_contact_email(e){
 		e.preventDefault();
 		let name_foto = document.getElementById("img-photo").value;
@@ -164,9 +164,6 @@ $pagina 			= title_web($url);
 					document.getElementById("email").value = "";
 					document.getElementById("asunto").value = "";
 					document.getElementById("text-contac").value = "";
-					document.getElementById("img-photo").value = '';
-					document.getElementById("phone").value = "";
-					document.getElementById("btn-delete").style.display="none";
 				}else{
 					Swal.fire('Error','Ocurrio un error intente mas tarde','error');
 				}

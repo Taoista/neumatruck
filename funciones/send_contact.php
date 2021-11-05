@@ -12,6 +12,9 @@ $name = strtolower($_POST['name']);
 $email = strtolower($_POST['email']);
 $asunto = strtolower($_POST['asunto']);
 $text = strtolower($_POST['text']);
+
+$state_foto = $_POST["name_foto"] == "" ? False: True;
+
 $phone = $_POST['phone'];
 
 // BUSCAR EMAIL correo
@@ -62,12 +65,14 @@ include_once("contacto/email.php");
 
 $base = null;
 $result->closeCursor();
-
+$year = date("Y");
 $name = $name;
 $email = $email;
 $asunto = $asunto;
 $text = $text;
 $phone = $phone;
+$state_foto = $state_foto;
+$extencion = $state_foto == ""? False : substr($state_foto, -3);
 
 $correo_php             = ob_get_contents();
 ob_end_clean();
@@ -76,9 +81,8 @@ $desde                 = 'MIME-Version: 1.0' . "\r\n";
 $desde                 .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
 $desde                 .= "From:"."	neumatruck.cl <no-reply@neumatruck.cl>";
 
-// mail("aolave@neumachile.cl",$cliente_asunto,$correo_php,$desde);
+mail("luis.olave.carvajal@gmail.com",$cliente_asunto,$correo_php,$desde);
 mail("contacto@neumatruck.cl",$cliente_asunto,$correo_php,$desde);
-// mail("avillegas@neumachile.cl",$cliente_asunto,$correo_php,$desde);
 mail($email_select,$cliente_asunto,$correo_php,$desde);
 mail("aolave@neumachile.cl",$cliente_asunto,$correo_php,$desde);
 
