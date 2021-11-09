@@ -5525,7 +5525,7 @@ hr.amarillo {
 }
 
 /* The slider */
-.slider {
+/* .slider {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -5563,11 +5563,10 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
 
 .slider.round:before {
   border-radius: 50%;
-}
+} */
