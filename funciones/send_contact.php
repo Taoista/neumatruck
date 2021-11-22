@@ -29,7 +29,7 @@ while($f = $result->fetch(PDO::FETCH_OBJ)){
 $maximo = count($correos);
 
 //SELECIONAR CONTADOR
-$contador_correo = 0;
+$contador_correo = 1;
 
 $result = $base->query("SELECT resultado FROM configuracion WHERE tipo = 'contador_email' ");
 $row    = $result->fetch(PDO::FETCH_NUM);
@@ -38,7 +38,7 @@ $contador_correo    = intval($row[0]);
 
 
 
-$email_select = $correos[$contador_correo]["email"];
+$email_select = $correos[($contador_correo - 1)]["email"];
 
 $id_saving =        $contador_correo;
 
@@ -81,11 +81,10 @@ $desde                 = 'MIME-Version: 1.0' . "\r\n";
 $desde                 .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
 $desde                 .= "From:"."	neumatruck.cl <no-reply@neumatruck.cl>";
 
-mail("luis.olave.carvajal@gmail.com",$cliente_asunto,$correo_php,$desde);
+// mail("luis.olave.carvajal@gmail.com",$cliente_asunto,$correo_php,$desde);
 mail("contacto@neumatruck.cl",$cliente_asunto,$correo_php,$desde);
 mail($email_select,$cliente_asunto,$correo_php,$desde);
 mail("aolave@neumachile.cl",$cliente_asunto,$correo_php,$desde);
-
 
 
 echo "enviado";

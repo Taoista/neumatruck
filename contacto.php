@@ -1,8 +1,7 @@
 <?php
-// auditado
+session_start();
 require('funciones/conexion.php');
 require('funciones/funciones.php');
-session_start();
 if(!isset($_SESSION)) {
   if(!isset($_SESSION["idunica"])){
 	 $_SESSION["idunica"]  = GeneraId(15);}
@@ -137,7 +136,7 @@ $pagina 			= title_web($url);
 				$.ajax({
                 data: parametros,
                 type: "POST",
-                url:  "./funciones/send_contact.php", 
+                url:  "./funciones/send_contact.php",   
                 beforeSend:function(){
                     Swal.fire({
                         html:'<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
