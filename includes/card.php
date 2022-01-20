@@ -56,6 +56,7 @@ function show_card($of, $marcas,$img, $apli, $stk, $ids, $std, $nombre, $cod, $v
     $url          = 'ficha.php?idProducto='.base64_encode($ids);
     $titulo       = substr($nombre,0,25);
     $codigo       = 'COD: '.$cod;
+    $lbl_stock    = $stk;
     $id           = $ids;
 
     $html = '';
@@ -110,7 +111,8 @@ function show_card($of, $marcas,$img, $apli, $stk, $ids, $std, $nombre, $cod, $v
     }
 
     // $html .=  $of !=0 ? '<p style="color:red;margin-top:0px;margin-bottom:0px">Precio Lista <del>'.MonedaTruckIVA($vlista).'</del></p>' : '<br>' ;
-    $html .= '<span>'.$codigo.'</span>';
+    $html .= '<span>'.$codigo.'</span><br>';
+    $html .= '<span> Stock: '.$lbl_stock.'</span>';
     $html .= '</div>';
     $html .= '<div class="add-to-cart">';
     if ($stock == 0 OR $stado == 0 OR $stock <= $min_stock) {
@@ -171,6 +173,7 @@ function card_index($of, $marcas,$img, $apli, $stk, $ids, $std, $nombre, $cod, $
   $url          = 'ficha.php?idProducto='.base64_encode($ids);
   $titulo       = substr($nombre,0,25);
   $codigo       = 'COD: '.$cod;
+  $lbl_stock    = $stk;
   $id           = $ids;
 
   $html = '';
@@ -220,7 +223,8 @@ function card_index($of, $marcas,$img, $apli, $stk, $ids, $std, $nombre, $cod, $
   }
 
 
-  $html .= '<span>'.$codigo.'</span>';
+  $html .= '<span>'.$codigo.'</span><br>';
+  $html .= '<span>Stock: '.$lbl_stock.'</span>';
   $html .= '</div>';
   $html .= '<div class="add-to-cart">';
   if ($stock == 0 OR $stado == 0 OR $stock <= $min_stock) {

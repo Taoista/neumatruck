@@ -30,7 +30,7 @@ if($estado_oferta != 1){
 	$url				= $_GET['tipo-item']; // => palabra de busqueda => buscar
 	$pmenu				= "Portada";
 	include 'includes/conx.php';
-	$productos = productos_oferta();
+	$productos = productos_oferta(); 
 ?>
 <!DOCTYPE html>
 <?php
