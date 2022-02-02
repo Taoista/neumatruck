@@ -101,7 +101,8 @@
 
                         <p class="text-justify">
 
-                        NeumaTruck.cl es una de las principales comercializadoras de marcas líderes de neumáticos para camión y buses, y líneas pesadas. Importamos solo marcas  innovadoras con productos de alta tecnología en la industria.
+                        NeumaTruck.cl es una de las principales comercializadoras de marcas líderes de neumáticos para camión y buses, y líneas pesadas. Importamos solo marcas innovadoras con productos de alta tecnología en la industria.
+Stock sujeto a cambios sin previo aviso
 
                         </p>
 

@@ -227,8 +227,8 @@ if(isset($idProdudcots) && $idProdudcots !=''){
 								<ul class="product-links" style="margin-top: 20px;">
 
 									<li>Stock:</li>
-
 									<li><?php echo $datosRow["stock"]; ?></li>
+									<li>Stock sujeto a cambios sin previo aviso </li>
 
 								</ul>
 
