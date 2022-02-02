@@ -167,37 +167,20 @@ function productos_oferta(){
   $productos = array();
 
     $re = mysql_query("SELECT p.id, p.codigo, p.estado, p.nombre, p.stock , m.marca, p.medidas, a.aplicacion, p.media, p.oferta, p.val_oferta, p.v_lista, p.v_publicado
-
 						FROM productos AS p
-
             INNER JOIN aplicaciones as a
-
             ON p.aplicacion = a.id_nex
-
 						INNER JOIN marcas AS m
-
 						ON p.marca = m.id_marcas
-
-						WHERE p.oferta = 1 AND  p.v_publicado != 0 ORDER BY p.id ASC ") or die(mysql_error());
-
+						WHERE p.oferta = 1 AND  p.v_publicado != 0 ORDER BY p.priority ASC ") or die(mysql_error());
     while($f = mysql_fetch_array($re)){
-
       array_push($productos,array("id" => $f["id"], "estado" => $f["estado"],"codigo" => $f["codigo"], "nombre" => $f["nombre"], "stock" => $f["stock"], "marca" => $f["marca"], "categoria" => $f["categoria"],
-
                     "medidas" => $f["medidas"],"aro" => $f["aro"], "aplicacion" => $f["aplicacion"], "v_lista" => $f["v_lista"], "v_publicado" => $f["v_publicado"],
-
                     "media" => $f["media"], "of" => $f["oferta"], "v_oferta" => $f["val_oferta"]));
-
     }
 
-
-
     mysql_close();
-
-
-
     return $productos;
-
 }
 
 function productos_oferta_especial(){

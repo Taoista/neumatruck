@@ -100,12 +100,12 @@ mysql_close();
 									<?php
 									$carro			= $mysqli->query("SELECT * FROM tmp_carro_truck WHERE tmp_idunica='".$_SESSION["idunica"]."' ");
 									while($carrorow = $carro->fetch_assoc()){
-										$urlProductoc    = _GetDomain.'producto/'.Url($carrorow['tmp_nombre']).'/'.$carrorow['tmp_idproducto'];
+										$urlProductoc    = _GetDomain.'ficha.php?idProducto='.base64_encode($carrorow['tmp_idproducto']);
 										$fotoc           = Imagen($carrorow['tmp_idproducto']);
 										$marcaProducto   = MarcaProducto($carrorow['tmp_idproducto']);
 										$total_item      = ($carrorow['tmp_valor'] * $carrorow['tmp_cantidad']) * 1.19;
 										$total_carro  	 = $total_carro + $total_item;
-										$fotoProductoc   = _GetOriginal.'productos/'.$fotoc.".jpg";
+										$fotoProductoc   = _GetOriginal.'productos/'.$carrorow['tmp_idproducto'].".webp";
 									?>
 										<div class="product-widget">
 											<div class="product-img">
