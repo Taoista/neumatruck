@@ -891,35 +891,20 @@
 					}
 					?>
                     <div class="col-md-3 col-xs-6">
-
 						<div class="product">
-
 							<a href="<?php echo 'ficha.php?idProducto='.base64_encode($consulta["id"]); ?>">
-
 							<div class="product-img">
-
 								<img src="<?php echo _GetOriginal.'productos/'.$consulta['media'].'.webp'; ?>">
-
 								<div class="product-label">
-
 									<span class="new"><?php echo $consulta['marca']; ?></span>
-
 								</div>
-
 							</div>
-
 							</a>
-
 							<div class="product-body">
-
 								<p class="product-category"><?php echo $consulta['aplicacion'] ?></p>
-
 								<h3 class="product-name"><a href="<?php echo 'ficha.php?idProducto='.base64_encode($consulta["id"]); ?>"><?php echo $consulta['nombre']; ?></a></h3>
-
 								<?php echo $precio; ?>
-
 							</div>
-
 							<div class="add-to-cart">
 
 								<button class="add-to-cart-btn agregacarro" rel="<?php echo $consulta['id']; ?>"><i class="fa fa-shopping-cart"></i>Agregar al Carro</button>
