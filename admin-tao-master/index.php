@@ -4,12 +4,10 @@ require_once('./modulos/PHPExcel/Classes/PHPExcel.php');
 
 echo "<strong>Inicio exportacion db(demos)</strong><br>";
 
+$lbl = date("d-m-Y")._.rand(1, 10).rand(1, 10).rand(1, 10).rand(1, 10).rand(1, 10).rand(1, 10);
 
-echo "valordel post => ".$_POST['file'].'<br>';
-$file_name = "pepgio_paga_doble";
 
 if($_POST["file"] == "") {
-    echo "no existe el archivo post";
     $productos = array();
 
     $sql = "SELECT p.id, p.codigo, p.estado, p.nombre, m.marca, p.v_publicado AS precio, 
@@ -65,7 +63,7 @@ if($_POST["file"] == "") {
 
 
     $objW = PHPExcel_IOFactory::createWriter($obj, "Excel2007");
-    $objW->save($file_name.".xlsx");
+    $objW->save($lbl.".xlsx");
 }else{
     echo "Creado";
 }
@@ -82,7 +80,7 @@ if($_POST["file"] == "") {
 </head>
 <body>
     <form action="index.php" method="POST">
-        <input type="hidden" name="file" value="<?php echo $file_name; ?>">
+        <input type="hidden" name="file" value="<?php echo $lbl; ?>">
         <?php
             if($_POST["file"] == ""):
                 ?><button type="submit">Generar</button> <?php
@@ -91,7 +89,7 @@ if($_POST["file"] == "") {
     </form>
     <?php
         if($_POST["file"]):
-        ?><a href="pepgio_paga_doble.xlsx" type="button">Descargar</a><?php
+        ?><a href="<?php echo $_POST["file"].".xlsx"; ?>" type="button">Descargar</a><?php
         endif;
     ?>
 </body>
