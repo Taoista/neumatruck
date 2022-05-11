@@ -4,7 +4,7 @@ require_once('./modulos/PHPExcel/Classes/PHPExcel.php');
 
 echo "<strong>Inicio exportacion db(demos)</strong><br>";
 
-$lbl = date("d-m-Y")._.rand(1, 10).rand(1, 10).rand(1, 10).rand(1, 10).rand(1, 10).rand(1, 10);
+$lbl = date("d-m-Y")."_".rand(1, 10).rand(1, 10).rand(1, 10).rand(1, 10).rand(1, 10).rand(1, 10);
 
 
 if($_POST["file"] == "") {
@@ -46,17 +46,22 @@ if($_POST["file"] == "") {
     $iva = 1.19;
 
     for ($i=0; $i <count($productos);$i++) { 
-        $stock = $productos[$i]["stock"] > 10 ? 1:0;
+        $stock = $productos[$i]["stock"] > 10 ? 'in_stock':'out_of_stock';
+        $val_oferta =  $productos[$i]["val_oferta"] == 0 ? '' : $productos[$i]["val_oferta"] * $iva;
+
         $obj->getActiveSheet()->SetCellValue('A'.$xlsfile, $productos[$i]["codigo"]);// codigo
-        $obj->getActiveSheet()->SetCellValue('B'.$xlsfile, $productos[$i]["descripcion"]);// ttiulo
-        $obj->getActiveSheet()->SetCellValue('C'.$xlsfile, $productos[$i]["descripcion"]);// descripcion
+        $obj->getActiveSheet()->SetCellValue('B'.$xlsfile, 'Neumático '.$productos[$i]["descripcion"]);// ttiulo
+        $obj->getActiveSheet()->SetCellValue('C'.$xlsfile, '');// descripcion
         $obj->getActiveSheet()->SetCellValue('D'.$xlsfile, $url.base64_encode($productos[$i]["id"]));// enlace al producto
-        $obj->getActiveSheet()->SetCellValue('E'.$xlsfile, 1);// nuevo 1= true 2 =false
+        $obj->getActiveSheet()->SetCellValue('E'.$xlsfile, 'New');// nuevo 1= true 2 =false
         $obj->getActiveSheet()->SetCellValue('F'.$xlsfile, $productos[$i]["precio"] * $iva);//precio
-        $obj->getActiveSheet()->SetCellValue('G'.$xlsfile, $productos[$i]["val_oferta"]);//precio oferta
+        $obj->getActiveSheet()->SetCellValue('G'.$xlsfile, $val_oferta);//precio oferta
         $obj->getActiveSheet()->SetCellValue('H'.$xlsfile, $stock);//disponibilidad
         $obj->getActiveSheet()->SetCellValue('I'.$xlsfile, $url_img.$productos[$i]["codigo"].'.webp');//enlace imagen
-        $obj->getActiveSheet()->SetCellValue('J'.$xlsfile, $productos[$i]["marca"]);//marca
+        $obj->getActiveSheet()->SetCellValue('J'.$xlsfile, '');//enlace imagen
+        $obj->getActiveSheet()->SetCellValue('K'.$xlsfile, '');//enlace imagen
+        $obj->getActiveSheet()->SetCellValue('L'.$xlsfile, $productos[$i]["marca"]);//marca
+        $obj->getActiveSheet()->SetCellValue('M'.$xlsfile, 911);//marca
 
         $xlsfile ++;
     }
