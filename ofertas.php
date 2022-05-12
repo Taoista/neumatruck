@@ -70,7 +70,7 @@ if($estado_oferta != 1){
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-					<div class="col-md-12"><h2 class="titulo"><?php echo $title.' Hasta el 28/02/2022'; ?></h2><hr class="amarillo"></div>
+					<div class="col-md-12"><h2 class="titulo"><?php echo $title; ?></h2><hr class="amarillo"></div>
 					<?php for ($i=0; $i < count($productos) ; $i++) { ?>
                         <?php echo show_card($productos[$i]['of'], $productos[$i]["marca"],$productos[$i]["media"], $productos[$i]["aplicacion"], $productos[$i]["stock"], $productos[$i]["id"], $productos[$i]["estado"], $productos[$i]["nombre"], $productos[$i]["codigo"], $productos[$i]['v_oferta'],$productos[$i]['v_publicado'], $productos[$i]['v_lista']); ?>
                     <?php } ?>
