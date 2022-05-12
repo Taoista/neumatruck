@@ -47,14 +47,15 @@ if($_POST["file"] == "") {
 
     for ($i=0; $i <count($productos);$i++) { 
         $stock = $productos[$i]["stock"] > 10 ? 'in_stock':'out_of_stock';
-        $val_oferta =  $productos[$i]["val_oferta"] == 0 ? '' : $productos[$i]["val_oferta"] * $iva;
+        $val_oferta =  $productos[$i]["val_oferta"] == 0 ? '' : strval($productos[$i]["val_oferta"] * $iva). ' CLP';
+        $precio = strval($productos[$i]["precio"] * $iva)." CLP";
 
         $obj->getActiveSheet()->SetCellValue('A'.$xlsfile, $productos[$i]["codigo"]);// codigo
         $obj->getActiveSheet()->SetCellValue('B'.$xlsfile, 'Neumático '.$productos[$i]["descripcion"]);// ttiulo
         $obj->getActiveSheet()->SetCellValue('C'.$xlsfile, '');// descripcion
         $obj->getActiveSheet()->SetCellValue('D'.$xlsfile, $url.base64_encode($productos[$i]["id"]));// enlace al producto
         $obj->getActiveSheet()->SetCellValue('E'.$xlsfile, 'New');// nuevo 1= true 2 =false
-        $obj->getActiveSheet()->SetCellValue('F'.$xlsfile, $productos[$i]["precio"] * $iva);//precio
+        $obj->getActiveSheet()->SetCellValue('F'.$xlsfile, $precio);//precio
         $obj->getActiveSheet()->SetCellValue('G'.$xlsfile, $val_oferta);//precio oferta
         $obj->getActiveSheet()->SetCellValue('H'.$xlsfile, $stock);//disponibilidad
         $obj->getActiveSheet()->SetCellValue('I'.$xlsfile, $url_img.$productos[$i]["codigo"].'.webp');//enlace imagen
