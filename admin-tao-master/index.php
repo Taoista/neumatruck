@@ -51,8 +51,8 @@ if($_POST["file"] == "") {
         $precio = strval($productos[$i]["precio"] * $iva)." CLP";
 
         $obj->getActiveSheet()->SetCellValue('A'.$xlsfile, $productos[$i]["codigo"]);// codigo
-        $obj->getActiveSheet()->SetCellValue('B'.$xlsfile, 'Neumático '.$productos[$i]["descripcion"]);// ttiulo
-        $obj->getActiveSheet()->SetCellValue('C'.$xlsfile, '');// descripcion
+        $obj->getActiveSheet()->SetCellValue('B'.$xlsfile, strtolower('Neumático '.$productos[$i]["descripcion"]));// ttiulo
+        $obj->getActiveSheet()->SetCellValue('C'.$xlsfile, strtolower('Neumático '.$productos[$i]["descripcion"]));// descripcion
         $obj->getActiveSheet()->SetCellValue('D'.$xlsfile, $url.base64_encode($productos[$i]["id"]));// enlace al producto
         $obj->getActiveSheet()->SetCellValue('E'.$xlsfile, 'New');// nuevo 1= true 2 =false
         $obj->getActiveSheet()->SetCellValue('F'.$xlsfile, $precio);//precio
@@ -61,7 +61,7 @@ if($_POST["file"] == "") {
         $obj->getActiveSheet()->SetCellValue('I'.$xlsfile, $url_img.$productos[$i]["codigo"].'.webp');//enlace imagen
         $obj->getActiveSheet()->SetCellValue('J'.$xlsfile, '');//enlace imagen
         $obj->getActiveSheet()->SetCellValue('K'.$xlsfile, '');//enlace imagen
-        $obj->getActiveSheet()->SetCellValue('L'.$xlsfile, $productos[$i]["marca"]);//marca
+        $obj->getActiveSheet()->SetCellValue('L'.$xlsfile, strtolower($productos[$i]["marca"]));//marca
         $obj->getActiveSheet()->SetCellValue('M'.$xlsfile, 911);//marca
 
         $xlsfile ++;
