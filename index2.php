@@ -81,7 +81,7 @@
 	?>
 	<!-- Terminalk modal -->
 	<!-- HEADER -->
-	<?php include('includes/header2.php'); ?> 
+	<?php include('includes/header.php'); ?>
 	<!-- HEADER -->
 	<?php include('includes/social.php'); ?>
 	<!-- BANNER -->
