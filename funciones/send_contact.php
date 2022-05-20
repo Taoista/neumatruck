@@ -82,7 +82,7 @@ $desde                 .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
 $desde                 .= "From:"."	neumatruck.cl <no-reply@neumatruck.cl>";
 
 // mail("luis.olave.carvajal@gmail.com",$cliente_asunto,$correo_php,$desde);
-// mail("contacto@neumatruck.cl",$cliente_asunto,$correo_php,$desde);
+mail("mhernandez@neumachile.cl",$cliente_asunto,$correo_php,$desde);
 mail($email_select,$cliente_asunto,$correo_php,$desde);
 mail("aolave@neumachile.cl",$cliente_asunto,$correo_php,$desde);
 
