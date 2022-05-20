@@ -47,7 +47,8 @@ mysql_close();
       </div>
 			<div class="container" style="display:flex;justify-content:center">
 				<ul class="header-links pull-left">
-					<li><a id="mail-min" href="contacto.php"><i class="fa fa-envelope-o"></i> contacto@neumatruck.cl</a></li>
+					<!-- <li><a id="mail-min" href="contacto.php"><i class="fa fa-envelope-o"></i> contacto@neumatruck.cl</a></li> -->
+					<li><a id="mail-min" href="mailto:contacto@neumatruck.cl"><i class="fa fa-envelope-o"></i> contacto@neumatruck.cl</a></li>
 					<li><a id="horario-min" href="javascript:void(0);"><i class="fa fa-clock-o"></i>Lunes a Viernes: 09:00 a 18:00 hrs</a></li>
 				</ul>
 			</div>
