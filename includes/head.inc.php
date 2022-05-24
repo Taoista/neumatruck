@@ -12,8 +12,9 @@
 
 
 <?php include('includes/css.php'); ?>
+<!-- ! DEPRECATED -->
 <!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   var _smartsupp = _smartsupp || {};
   _smartsupp.key = '1282424d565fce81924ea423549a605314e60f03';
   window.smartsupp||(function(d) {
@@ -25,4 +26,4 @@
 
 
 
-</script>
+</script> -->
