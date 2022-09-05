@@ -315,11 +315,32 @@ Stock sujeto a cambios sin previo aviso
     </div>
 
     <!-- /bottom footer -->
-
 </footer>
 
 <!-- /FOOTER -->
-
+<div class="modal fade" id="mi_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span><span class="sr-only">Cerrar</span>
+          </button>
+          <h4 class="modal-title" id="myModalLabel">Agrega tu correo</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row" style="padding:15px">
+            <label for="" style="color:red; display:none; text-align:center" id="lbl-error">Debe agregar un email valido para continuar</label>
+            <input id="email-session" type="text" class="form-control" id="recipient-name" placeholder="Email"><br>
+            <button id="verificar-session" type="button" class="btn btn-default center-block" >Continuar</button>
+          </div>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <!-- jQuery Plugins -->
@@ -340,18 +361,88 @@ Stock sujeto a cambios sin previo aviso
 
 <script type="text/javascript">
 
+const _Url = '<?php echo _GetDomain; ?>';
+const session = '<?php echo $_SESSION["idunica"]; ?>'
+
+// $('#mi_modal').modal({backdrop: 'static', keyboard: false})
+const verificar_session = document.querySelector("#verificar-session")
+const email_secction = document.querySelector("#email-session")
+const lbl_error = document.querySelector("#lbl-error")
+const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+
+
+console.log("inciiando")
+console.log(session)
+
+if(session == '' || session == null){
+    new Promise((resolve, reject) =>{
+        $.ajax({
+            url:  _Url+"funciones/status_session.php",
+            type: "GET",
+            success:function(response){
+                resolve(response);
+            }
+        })
+    }).then(res =>{
+        console.log(session)
+    })
+}
 
 
 
+
+
+
+verificar_session.addEventListener("click", (e) => {
+    
+        if(email_secction.value == "" || email_secction.value == null){
+                lbl_error.style.display = "block"
+        }else if(!emailRegex.test(email_secction.value)){
+            Swal.fire(
+                        'Inente en un momento',
+                        'Debe agregar un email correcto',
+                        'error'
+                        )
+        }else{
+            new Promise((resolve, reject) =>{
+                // * consulta el esta de la session
+                console.log("entrando a la primesa")
+                $.ajax({
+                        // data: parameters,
+                        url:  _Url+"funciones/create_session.php?email="+email_secction.value,
+                        type: "GET",
+                    
+                        beforeSend:function(){
+                           
+                        },
+                        success:function(response){
+                            resolve(response);
+                        }
+                    })
+            }).then(res =>{
+                console.log('resolviendo el response')
+                console.log(res)
+                if(res == 'error'){
+                    Swal.fire(
+                        'Inente en un momento',
+                        'Debe agregar un email correcto',
+                        'error'
+                        )
+                }else{
+                    // * debe llenar la funcion de crear elemento en el carrito
+                    var referencia		= $('.agregacarro').attr('rel'); //id del elemento
+                    var bla             = '1' //cantidad seleccionada
+                    var url             = baseurl + "carrito-accion.php?idpro="+referencia+"&accion=sumform&cantidad=" + bla; 
+                    window.location.href= url;
+                }
+            })
+        }
+})
 
 
 
 function href_envio(id){
-
     location.href = 'ficha.php?idProducto='+btoa(id);
-
-    // console.log("enviaod");
-
 }
 
 
@@ -359,17 +450,11 @@ function href_envio(id){
 
 
 function agregar_product(rel,stock,estado){
-
     if(stock == 0 || estado == 0){
-
         Swal.fire({
-
         title:'Verifica Stock con su vendedor',
-
         icon: 'warning',
-
         showCancelButton: false,
-
         })
 
     }else{
@@ -389,47 +474,23 @@ function agregar_product(rel,stock,estado){
 }
 
 
-
     var baseurl = '<?php echo _GetDomain; ?>';
 
 
-
-    $('.agregacarro').click(function(){
-        fbq('track', 'AddToCart');
-        console.log("creando evente de facebook");
-        // var  pixel_val      = $(".product-price").val();
-
-        var codigo_ivana = "codigo_demo_ivana";
-
-        // var  valor_ivana = $("#val-").text();
-
-        // alert(valor_ivana);
-
-        // fbq('track', 'AddToCart',{
-
-            // content_name: 'Really Fast Running Shoes',
-
-            // content_category: 'Apparel & Accessories > Shoes',
-
-            // content_ids: ['1234'],
-
-            // content_type: 'product',
-
-            // value: valor_ivana,
-
-        //     currency: 'CLP'
-
-        // });
-
-
-
-        var referencia		= $(this).attr('rel'); //id del elemento
-
-        var bla             = '1' //cantidad seleccionada
-
-        var url             = baseurl + "carrito-accion.php?idpro="+referencia+"&accion=sumform&cantidad=" + bla; 
-
-        window.location.href= url;
+    //  * boton para agrear al carro
+    $('.agregacarro').click(function(event){
+        event.preventDefault();
+        if(session == "" || session == null){
+            $('#mi_modal').modal('show');
+        }else{
+            fbq('track', 'AddToCart');
+            var codigo_ivana = "codigo_demo_ivana";
+            // * elemento que crea el ingreso del producto
+            var referencia		= $(this).attr('rel'); //id del elemento
+            var bla             = '1' //cantidad seleccionada
+            var url             = baseurl + "carrito-accion.php?idpro="+referencia+"&accion=sumform&cantidad=" + bla; 
+            window.location.href= url;
+        }
 
 
 
@@ -564,6 +625,8 @@ function send_newslatter(e){
         Swal.fire('error','El email es invalido','error');
     }
 }
+// * div moda
+
 
 </script>
 <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "90872474c6e22cee5d486a671662c849675c91e4c2dc01163e9240e46248b799", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script>

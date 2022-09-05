@@ -2,9 +2,11 @@
 
 
 
-const _GetDomain 		= 'https://www.neumatruck.cl/';
+const _GetDomain 		= 'https://debug.neumatruck.cl/';
+// const _GetDomain 		= 'https://www.neumatruck.cl/';
 
-const _GetOriginal 		= 'https://www.neumatruck.cl/';
+const _GetOriginal 		= 'https://debug.neumatruck.cl/';
+// const _GetOriginal 		= 'https://www.neumatruck.cl/';
 
 
 
@@ -29,6 +31,7 @@ const _AumentoValor		=  1;
 function productos_index($tipo, $limite) {
 
 	include('conx.php');
+	
 
 	$productos = array();
 

@@ -4,9 +4,11 @@
 	require('funciones/conexion.php');
 	require('funciones/funciones.php');
 	include 'includes/card.php';
-	if(!isset($_SESSION["idunica"])){
-		$_SESSION["idunica"]  = GeneraId(15);
-	}
+	// *eliminacion de la creacion de session
+	// if(!isset($_SESSION["idunica"])){
+	// 	$_SESSION["idunica"]  = GeneraId(15);
+	// }
+
 	$url						= "Portada";
 	$pmenu						= "Portada";
 	$pagina 					= title_web($url);
