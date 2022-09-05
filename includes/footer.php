@@ -371,8 +371,7 @@ const lbl_error = document.querySelector("#lbl-error")
 const emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
 
-console.log("inciiando")
-console.log(session)
+// console.log(session)
 
 if(session == '' || session == null){
     new Promise((resolve, reject) =>{
@@ -384,7 +383,7 @@ if(session == '' || session == null){
             }
         })
     }).then(res =>{
-        console.log(session)
+        // console.log(session)
     })
 }
 
@@ -406,7 +405,7 @@ verificar_session.addEventListener("click", (e) => {
         }else{
             new Promise((resolve, reject) =>{
                 // * consulta el esta de la session
-                console.log("entrando a la primesa")
+                // console.log("entrando a la primesa")
                 $.ajax({
                         // data: parameters,
                         url:  _Url+"funciones/create_session.php?email="+email_secction.value,
@@ -420,8 +419,8 @@ verificar_session.addEventListener("click", (e) => {
                         }
                     })
             }).then(res =>{
-                console.log('resolviendo el response')
-                console.log(res)
+                // console.log('resolviendo el response')
+                // console.log(res)
                 if(res == 'error'){
                     Swal.fire(
                         'Inente en un momento',

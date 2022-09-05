@@ -5,9 +5,9 @@ require('funciones/funciones.php');
 
 if(!isset($_SESSION)) {
   session_start();
-  if(!isset($_SESSION["idunica"])){
+//   if(!isset($_SESSION["idunica"])){
 
-	 $_SESSION["idunica"]  = GeneraId(15);}
+// 	 $_SESSION["idunica"]  = GeneraId(15);}
 
 }
 

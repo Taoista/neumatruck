@@ -10,13 +10,13 @@ require('funciones/funciones_aux.php');
 
 session_start();
 
-if(!isset($_SESSION)) {
+// if(!isset($_SESSION)) {
 
-  if(!isset($_SESSION["idunica"])){
+//   if(!isset($_SESSION["idunica"])){
 
-	 $_SESSION["idunica"]  = GeneraId(15);}
+// 	 $_SESSION["idunica"]  = GeneraId(15);}
 
-}
+// }
 
 if(isset($idProdudcots) && $idProdudcots !=''){
 

@@ -20,7 +20,8 @@ if(!isset($_SESSION)) {
 
   if(!isset($_SESSION["idunica"])){
 
-	 $_SESSION["idunica"]  = GeneraId(15);}
+	//  $_SESSION["idunica"]  = GeneraId(15);
+	}
 
 }
 

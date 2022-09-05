@@ -4,8 +4,8 @@ require('funciones/conexion.php');
 require('funciones/funciones.php');
 session_start();
 if(!isset($_SESSION)) {
-  if(!isset($_SESSION["idunica"])){
-	 $_SESSION["idunica"]  = GeneraId(15);}
+//   if(!isset($_SESSION["idunica"])){
+// 	 $_SESSION["idunica"]  = GeneraId(15);}
 }
 //-INFO BASICA
 $url				= "Contacto";

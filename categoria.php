@@ -12,9 +12,9 @@ include('includes/card.php');
 
 
 
-	if(!isset($_SESSION["idunica"])){
+	// if(!isset($_SESSION["idunica"])){
 
-		$_SESSION["idunica"]  = GeneraId(15);}
+	// 	$_SESSION["idunica"]  = GeneraId(15);}
 
 
 
