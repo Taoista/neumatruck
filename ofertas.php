@@ -22,8 +22,8 @@ if($estado_oferta != 1){
 	exit;
 }
 
-	if(!isset($_SESSION["idunica"])){
-		$_SESSION["idunica"]  = GeneraId(15);}
+	// if(!isset($_SESSION["idunica"])){
+	// 	$_SESSION["idunica"]  = GeneraId(15);}
 	// if(isset($_GET['tipo-item']) && $_GET['tipo-item'] !=''){
 	// $buscar					= $mysqli->real_escape_string(trim(RemoveXSS($_POST['tipo-item'])));
 	//-INFO BASICA

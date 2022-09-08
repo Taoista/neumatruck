@@ -2,10 +2,10 @@
 
 
 
-const _GetDomain 		= 'https://debug.neumatruck.cl/';
+const _GetDomain 		= 'https://neumatruck.cl/';
 // const _GetDomain 		= 'https://www.neumatruck.cl/';
 
-const _GetOriginal 		= 'https://debug.neumatruck.cl/';
+const _GetOriginal 		= 'https://neumatruck.cl/';
 // const _GetOriginal 		= 'https://www.neumatruck.cl/';
 
 
