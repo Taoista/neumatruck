@@ -317,7 +317,7 @@ Stock sujeto a cambios sin previo aviso
     <!-- /bottom footer -->
 </footer>
 
-<!-- /FOOTER -->
+<!-- /FOOTER modal -->
 <div class="modal fade" id="mi_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -393,7 +393,8 @@ if(session == '' || session == null){
 
 
 verificar_session.addEventListener("click", (e) => {
-    
+        // e.preventDefault();
+        
         if(email_secction.value == "" || email_secction.value == null){
                 lbl_error.style.display = "block"
         }else if(!emailRegex.test(email_secction.value)){
@@ -410,7 +411,7 @@ verificar_session.addEventListener("click", (e) => {
                         // data: parameters,
                         url:  _Url+"funciones/create_session.php?email="+email_secction.value,
                         type: "GET",
-                    
+              
                         beforeSend:function(){
                            
                         },
@@ -420,8 +421,10 @@ verificar_session.addEventListener("click", (e) => {
                     })
             }).then(res =>{
                 // console.log('resolviendo el response')
-                // console.log(res)
+                console.log("aaaaaaaaaa 2")
+                console.log(res)
                 if(res == 'error'){
+                    console.log("entro en el error")
                     Swal.fire(
                         'Inente en un momento',
                         'Debe agregar un email correcto',
@@ -432,6 +435,9 @@ verificar_session.addEventListener("click", (e) => {
                     var referencia		= $('.agregacarro').attr('rel'); //id del elemento
                     var bla             = '1' //cantidad seleccionada
                     var url             = baseurl + "carrito-accion.php?idpro="+referencia+"&accion=sumform&cantidad=" + bla; 
+
+                    console.log("---------------")
+                    console.log(url)
                     window.location.href= url;
                 }
             })
@@ -488,7 +494,7 @@ function agregar_product(rel,stock,estado){
             var referencia		= $(this).attr('rel'); //id del elemento
             var bla             = '1' //cantidad seleccionada
             var url             = baseurl + "carrito-accion.php?idpro="+referencia+"&accion=sumform&cantidad=" + bla; 
-            window.location.href= url;
+            // window.location.href= url;
         }
 
 

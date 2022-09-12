@@ -1,7 +1,6 @@
 <?php
 
 
-
 require('funciones/conexion.php');
 
 require('funciones/funciones.php');
