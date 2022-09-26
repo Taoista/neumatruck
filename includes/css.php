@@ -141,7 +141,7 @@
 <!-- Facebook Pixel Code -->
 <!-- Meta Pixel Code -->
 <!-- antiguo -->
-<!-- <script>
+<script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -155,10 +155,10 @@ fbq('track', 'PageView');
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=774529303830066&ev=PageView&noscript=1"
-/></noscript> -->
+/></noscript>
 
 <!-- Meta Pixel Code -->
-<script>
+<!-- <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -172,7 +172,7 @@ src="https://www.facebook.com/tr?id=774529303830066&ev=PageView&noscript=1"
 </script>
 <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=767615544498476&ev=PageView&noscript=1"
-/></noscript>
+/></noscript> -->
 <!-- End Meta Pixel Code -->
 
 <!-- End Meta Pixel Code -->
