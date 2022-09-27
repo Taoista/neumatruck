@@ -65,13 +65,28 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
 <!-- Global site tag (gtag.js) - Google Ads: 10981964957 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10981964957"></script>
+<!--  actual -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10981964957"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'AW-10981964957');
+</script> -->
+<!-- antiguo tokenb e08b4e8 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159179503-1"></script>
+
+<script>
+
+	window.dataLayer = window.dataLayer || [];
+
+	function gtag(){dataLayer.push(arguments);}
+
+	gtag('js', new Date());
+
+	gtag('config', 'UA-159179503-1');
+
 </script>
 <!-- FACEBOOK VERIFICADOR DOMINIO PIXEL -->
 <meta name="facebook-domain-verification" content="hmhiq76ah4inz05pdl0jgt08inex1h" />
