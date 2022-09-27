@@ -112,7 +112,7 @@ function getBanners(){
 
 	while($f = mysql_fetch_array($re)){
 
-	  array_push($banmners, array('id' => $f['id'], 'img' => $f['img'], 'url' => $f['url']));
+	  array_push($banmners, array('id' => $f['id'], 'img' => $f['img'], 'url' => $f['url'], "id_producto" => $f['id_producto']));
 
 	}
 

@@ -97,7 +97,9 @@
 		<?php if ($getBanners[$i]['url'] != 'no') { ?>
 			<a href="<?php echo $getBanners[$i]["url"]; ?>"><img class="nature" src="<?php echo 'img/2.0/banner/'.$getBanners[$i]['img'].'.webp'; ?>" width="100%"></a>
 		<?php }elseif($getBanners[$i]["id_producto"] !=  0){ ?>
-			<a href="<?php echo 'ficha.php?idProducto='.base64_encode($getBanners[$i]['id_producto']); ?>"><img class="nature" src="<?php echo 'img/2.0/banner/'.$getBanners[$i]['img'].'.webp'; ?>" width="100%"></a>
+			<a href="<?php echo _GetDomain.'ficha.php?idProducto='.base64_encode($getBanners[$i]['id_producto']); ?>">
+				<img class="nature" src="<?php echo 'img/2.0/banner/'.$getBanners[$i]['img'].'.webp'; ?>" width="100%">
+			</a>
 		<?php }else{ ?>
 			<img class="nature" src="<?php echo 'img/2.0/banner/'.$getBanners[$i]['img'].'.webp'; ?>" width="100%">
 		<?php } ?>
