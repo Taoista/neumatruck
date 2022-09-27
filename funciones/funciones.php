@@ -8,7 +8,7 @@ const _GetDomain 		= 'https://www.neumatruck.cl/';
 const _GetOriginal 		= 'https://www.neumatruck.cl/';
 // const _GetOriginal 		= 'https://www.neumatruck.cl/';
 
-
+const _DEBUG			= FALSE;
 
 //const _AumentoValor		=  1.20;
 
