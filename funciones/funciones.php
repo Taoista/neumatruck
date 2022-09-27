@@ -108,7 +108,7 @@ function getBanners(){
 
 
 
-	$re = mysql_query("SELECT id, img, url FROM sliders WHERE estado = 1") or die(mysql_error());
+	$re = mysql_query("SELECT id, img, url, id_producto FROM sliders WHERE estado = 1") or die(mysql_error());
 
 	while($f = mysql_fetch_array($re)){
 
