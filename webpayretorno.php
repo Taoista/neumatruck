@@ -33,7 +33,7 @@ use Freshwork\Transbank\RedirectorHelper;
 
 // * TEST
 // \Transbank\Webpay\WebpayPlus::configureForIntegration('597055555532', '579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C');
-$bag = CertificationBagFactory::configureForIntegration('597055555532', '579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C');
+// $bag = CertificationBagFactory::configureForIntegration('597055555532', '579B532A7440BB0C9079DED94D31EA1615BACEB56610332264630D42D0A36B1C');
 // * ORIGINAL
 $bag = CertificationBagFactory::production('cert/597034933758.key', 'cert/597034933758.crt'); // <==== KEY
 
