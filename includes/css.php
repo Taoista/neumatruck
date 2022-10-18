@@ -31,7 +31,8 @@
 	<!-- Font Awesome Icon -->
 
 	<link rel="stylesheet" href="css/font-awesome.min.css">
-
+	<!-- wasssap css -->
+	<link type="text/css" rel="stylesheet" href="<?php echo _GetDomain; ?>css/wsp.css" />
 
 
 	<!-- Custom stlylesheet -->

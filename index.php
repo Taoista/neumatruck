@@ -55,7 +55,8 @@
 	<?php include_once("includes/head.inc.php"); ?>
 </head>
 <body>
-	
+
+
 <?php include 'includes/body.inc.php'; ?>
 
 <?php

@@ -40,6 +40,8 @@ if($estado_oferta != 1){
 	<head>
 		<?php include_once("includes/head.inc.php"); ?>
 	</head>
+<?php include 'includes/body.inc.php'; ?>
+
 	<body>
 	<!-- HEADER -->
 	<?php include('includes/header.php'); ?>
