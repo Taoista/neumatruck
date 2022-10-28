@@ -13,7 +13,7 @@ $re = mysql_query("SELECT * FROM configuracion WHERE tipo = 'of'") or die(mysql_
       $op_oferta_2 = $f["resultado"];
 }
 $telefonos = array();
-$re = mysql_query("SELECT * FROM telefonos ORDER BY orden ASC") or die(mysql_error());
+$re = mysql_query("SELECT * FROM telefonos WHERE estado = 1 ORDER BY orden ASC") or die(mysql_error());
     while($f = mysql_fetch_array($re)){
       array_push($telefonos,array("id" => $f["id"], "id_css" => $f["id_css"],"phone" => $f["phone"]));
 }
@@ -35,14 +35,17 @@ mysql_close();
 				<ul class="header-links pull-left">
 					<li><a id="tel-text-fono" class="ul-telefonos" href="#">Fono ventas:</a></li>
 					<?php for ($i=0; $i < count($telefonos) ; $i++) { ?>
-						<li><a id="<?php echo $telefonos[$i]['id_css'] ?>" class="ul-telefonos" href="<?php echo "tel:".str_replace(' ','',$telefonos[$i]['phone']); ?>"><i class="fa fa-phone"></i><?php echo " ".$telefonos[$i]['phone']; ?></a></li>
+						<li><a id="<?php echo $telefonos[$i]['id_css'] ?>" class="ul-telefonos" href="<?php echo "tel:".str_replace(' ','',$telefonos[$i]['phone']); ?>">
+								<i class="fa fa-phone"></i><?php echo " ".$telefonos[$i]['phone']; ?>
+							</a>
+						</li>
 					<?php } ?>
 				</ul>
 			</div>
       <!-- flex -->
       <div id="div-interno-header telefono-fijo" class="container" style="justify-content:center">
         <ul>
-          <li><a id="tel-text-fono-fijo" style="color:white;font-size:23px" class="ul-telefonos-fijo" href="<?php echo "tel:".str_replace(' ','',$telefonos[2]['phone']); ?>"><i class="fa fa-phone" style="color:#ffb03d"></i><?php echo " ".$telefonos[2]['phone']; ?></a></li>
+          <!-- <li><a id="tel-text-fono-fijo" style="color:white;font-size:23px" class="ul-telefonos-fijo" href="<?php echo "tel:".str_replace(' ','',$telefonos[2]['phone']); ?>"><i class="fa fa-phone" style="color:#ffb03d"></i><?php echo " ".$telefonos[2]['phone']; ?></a></li> -->
         </ul>
       </div>
 			<div class="container" style="display:flex;justify-content:center">

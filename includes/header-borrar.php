@@ -40,11 +40,11 @@ mysql_close();
 
 					<li><a id="tel-max-firts" class="ul-telefonos" href="tel:+56981833333"><i class="fa fa-phone"></i> +56 9 8183 3333</a></li>
 
-					<li><a id="tel-max-second" class="ul-telefonos" href="tel:+56946649909"><i class="fa fa-phone"></i> +56 9 4664 9909</a></li>
+					<!-- <li><a id="tel-max-second" class="ul-telefonos" href="tel:+56946649909"><i class="fa fa-phone"></i> +56 9 4664 9909</a></li>
 
           			<li><a id="tel-max-second" class="ul-telefonos" href="tel:+56224846064"><i class="fa fa-phone"></i> +56 2 2484 6064</a></li>
 
-					<li><a id="tel-max-firts" class="ul-telefonos" href="tel:+56224846042"><i class="fa fa-phone"></i> +56 2 2484 6042</a></li>
+					<li><a id="tel-max-firts" class="ul-telefonos" href="tel:+56224846042"><i class="fa fa-phone"></i> +56 2 2484 6042</a></li> -->
 
 				</ul>
 
