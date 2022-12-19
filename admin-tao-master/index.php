@@ -47,8 +47,8 @@ if($_POST["file"] == "") {
 
     for ($i=0; $i <count($productos);$i++) { 
         $stock = $productos[$i]["stock"] > 10 ? 'in_stock':'out_of_stock';
-        $val_oferta =  $productos[$i]["val_oferta"] == 0 ? '' : strval($productos[$i]["val_oferta"] * $iva). ' CLP';
-        $precio = strval($productos[$i]["precio"] * $iva)." CLP";
+        $val_oferta =  $productos[$i]["val_oferta"] == 0 ? '' : strval(round($productos[$i]["val_oferta"] * $iva)). ' CLP';
+        $precio = strval(round($productos[$i]["precio"] * $iva))." CLP";
 
         $obj->getActiveSheet()->SetCellValue('A'.$xlsfile, $productos[$i]["codigo"]);// codigo
         $obj->getActiveSheet()->SetCellValue('B'.$xlsfile, strtolower('Neumático '.$productos[$i]["descripcion"]));// ttiulo
