@@ -1,4 +1,7 @@
 <?php
+    // *
+    // * actualiza la base de datos de neumatruck 
+    // *
 
     echo "inciio del proeycto"."<br>";
 
