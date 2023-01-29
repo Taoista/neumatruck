@@ -1,4 +1,4 @@
-# neumatruck
+# neumatruck php5.6
 version rescatada 2019
 esta version de neumatruck es la de PHP 5.6
 se esta pasando a la version 7 en el repositorio neumatruck_v2
