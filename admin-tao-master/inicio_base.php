@@ -1,9 +1,6 @@
 <?php
-    // *
-    // * actualiza la base de datos de neumatruck 
-    // *
 
-    echo "inciio del proeycto"."<br>";
+    echo "inciio del proeycto actualizacion clientes"."<br>";
 
     include '../includes/conx.php';
 

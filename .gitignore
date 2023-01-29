@@ -2,4 +2,6 @@
 *.jpg
 *.zip
 *.rar
-
+.htaccess
+*.xlsx
+*.xlx
